@@ -18,6 +18,7 @@ options = {
     #"CAP_PROP_CONVERT_RGB": 1,
 
     #"CAP_PROP_FOURCC": 0x47504A4D,  # MJPG -- high CPU usage, figure out how to accel
+    # https://github.com/abhiTronix/vidgear/issues/148
 }
 
 # define and start the stream on first source ( For e.g #0 index device)
