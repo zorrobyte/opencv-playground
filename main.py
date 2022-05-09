@@ -6,11 +6,12 @@ import time
 
 # define suitable tweak parameters for your stream.
 options = {
-    "CAP_PROP_FRAME_WIDTH": 1920,  # resolution 320x240
-    "CAP_PROP_FRAME_HEIGHT": 1080,
-    "CAP_PROP_FPS": 60,  # frame rate 60fps
+    "CAP_PROP_FRAME_WIDTH": 4096,  # resolution 320x240
+    "CAP_PROP_FRAME_HEIGHT": 2160,
+    "CAP_PROP_FPS": 30,  # frame rate 60fps
     "CAP_PROP_AUTOFOCUS": 0,
     "CAP_PROP_FOCUS": 0,
+    "CAP_PROP_FOURCC": 0x47504A4D,  # MJPG
 }
 
 # define and start the stream on first source ( For e.g #0 index device)
