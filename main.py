@@ -17,13 +17,13 @@ options = {
 stream1 = VideoGear(source=0, logging=True, **options).start()
 
 # define and start the stream on second source ( For e.g #1 index device)
-#stream2 = VideoGear(source=1, logging=True).start()
+#stream2 = VideoGear(source=2, logging=True).start()
 
 # define and start the stream on second source ( For e.g #1 index device)
-stream3 = VideoGear(source=1, logging=True, **options).start()
+#stream3 = VideoGear(source=1, logging=True, **options).start()
 
 # define and start the stream on second source ( For e.g #1 index device)
-stream4 = VideoGear(source=2, logging=True, **options).start()
+#stream4 = VideoGear(source=2, logging=True, **options).start()
 
 # used to record the time when we processed last frame
 prev_frame_time = 0
@@ -40,16 +40,16 @@ while True:
     #frameB = stream2.read()
     # read frames from stream2
 
-    frameC = stream3.read()
+    #frameC = stream3.read()
     # read frames from stream2
 
-    frameD = stream4.read()
+    #frameD = stream4.read()
     # read frames from stream2
 
     # check if any of two frame is None
-    if frameA is None or frameC is None:
-        # if True break the infinite loop
-        break
+    #if frameA is None or frameB is None:
+    #    # if True break the infinite loop
+    #    break
 
     # font which we will be using to display FPS
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -77,8 +77,8 @@ while True:
     # do something with both frameA and frameB here
     cv2.imshow("Output Frame1", frameA)
     #cv2.imshow("Output Frame2", frameB)
-    cv2.imshow("Output Frame3", frameC)
-    cv2.imshow("Output Frame4", frameD)
+    #cv2.imshow("Output Frame3", frameC)
+    #cv2.imshow("Output Frame4", frameD)
     # Show output window of stream1 and stream 2 separately
 
     key = cv2.waitKey(1) & 0xFF
@@ -91,8 +91,8 @@ while True:
         # if 'w' key-pressed save both frameA and frameB at same time
         cv2.imwrite("Image-1.jpg", frameA)
         #cv2.imwrite("Image-2.jpg", frameB)
-        cv2.imwrite("Image-3.jpg", frameC)
-        cv2.imwrite("Image-4.jpg", frameD)
+        #cv2.imwrite("Image-3.jpg", frameC)
+        #cv2.imwrite("Image-4.jpg", frameD)
         # break   #uncomment this line to break out after taking images
 
 cv2.destroyAllWindows()
@@ -101,5 +101,5 @@ cv2.destroyAllWindows()
 # safely close both video streams
 stream1.stop()
 #stream2.stop()
-stream3.stop()
-stream4.stop()
+#stream3.stop()
+#stream4.stop()
