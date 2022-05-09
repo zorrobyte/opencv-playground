@@ -6,12 +6,18 @@ import time
 
 # define suitable tweak parameters for your stream.
 options = {
-    "CAP_PROP_FRAME_WIDTH": 4096,  # resolution 320x240
-    "CAP_PROP_FRAME_HEIGHT": 2160,
-    "CAP_PROP_FPS": 30,  # frame rate 60fps
+    # https://abhitronix.github.io/vidgear/latest/gears/camgear/advanced/source_params/
+    "CAP_PROP_FRAME_WIDTH": 1920,  # resolution 320x240
+    "CAP_PROP_FRAME_HEIGHT": 1080,
+    "CAP_PROP_FPS": 20,  # frame rate 60fps
     "CAP_PROP_AUTOFOCUS": 0,
     "CAP_PROP_FOCUS": 0,
-    "CAP_PROP_FOURCC": 0x47504A4D,  # MJPG
+    "CAP_PROP_EXPOSURE": 312, # min=3 max=2047 step=1 default=250 value=312
+    "CAP_PROP_AUTO_EXPOSURE": 1, # 1 Manual Mode 3 Aperture Priority Mode
+    # exposure_auto_priority 0x009a0903 (bool)   : default=0 value=1
+    #"CAP_PROP_CONVERT_RGB": 1,
+
+    #"CAP_PROP_FOURCC": 0x47504A4D,  # MJPG -- high CPU usage, figure out how to accel
 }
 
 # define and start the stream on first source ( For e.g #0 index device)
